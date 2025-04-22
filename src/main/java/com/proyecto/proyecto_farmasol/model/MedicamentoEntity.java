@@ -13,8 +13,9 @@ public class MedicamentoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idmed;
     private String codigo;
+    private String nombre;
     private String descripcion;
     private int stock;
     private int idcategoria;

@@ -1,6 +1,7 @@
 package com.proyecto.proyecto_farmasol.model;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -24,8 +25,8 @@ public class MedicamentoEntity {
     @Column(columnDefinition = "TEXT")
     private String descripcion;
 
-    @Column(name = "id")
-    private int categoria;
+    @Column(name = "categoria_id")
+    private Integer categoria;
 
     @Column(name = "requiere_receta")
     private Boolean requiereReceta = false;
@@ -51,5 +52,8 @@ public class MedicamentoEntity {
     @Column(name = "ultima_actualizacion")
     private LocalDateTime ultimaActualizacion;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "categoria_id", nullable = false)
+    private CategoriaEntity categoriaid;
 
 }

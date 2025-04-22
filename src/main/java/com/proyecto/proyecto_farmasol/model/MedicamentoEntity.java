@@ -23,6 +23,10 @@ public class MedicamentoEntity {
     private LocalDateTime fechaRegistro;
     private Date fechaVencimiento;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "categoriaid")  // clave foránea en la tabla medicamentos
+    private CategoriaEntity categoriaid;
+
 
 
 }

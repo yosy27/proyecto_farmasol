@@ -18,21 +18,18 @@ public class VentasEntity {
     private int id;
     @Column(name = "numero_comprobante", length = 20, unique = true)
     private String numeroComprobante;
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private ClientesEntity cliente;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private UsuarioEntity usuario;
+    @Column(name="id")
+    private int cliente;
+    @Column(name = "id", nullable = false)
+    private int usuario;
     @Column(name = "fecha_venta", updatable = false)
     private LocalDateTime fechaVenta;
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal subtotal;
+    private double subtotal;
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal igv;
+    private double igv;
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal total;
+    private double total;
     @Enumerated(EnumType.STRING)
     @Column(name = "metodo_pago", nullable = false)
     private MetodoPago metodoPago = MetodoPago.Efectivo;

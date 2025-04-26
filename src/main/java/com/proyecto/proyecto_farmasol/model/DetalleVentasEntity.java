@@ -5,21 +5,21 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_detalle_ventas")
+@Table(name = "detalle_ventas")
 public class DetalleVentasEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "id")
+    @Column(name = "venta_id")
     private int venta;
-    @Column(name = "id")
+    @Column(name = "medicamento_id")
     private int medicamento;
     @Column(nullable = false)
     private Integer cantidad;
-    @Column(name = "precio_unitario", nullable = false, precision = 10, scale = 2)
+    @Column(name = "precio_unitario", nullable = false)
     private double precioUnitario;
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false)
     private double subtotal;
     @Column(nullable = false)
     private Boolean receta = false;

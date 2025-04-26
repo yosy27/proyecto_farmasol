@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "tb_ventas")
+@Table(name = "ventas")
 
 public class VentasEntity {
 
@@ -18,17 +18,17 @@ public class VentasEntity {
     private int id;
     @Column(name = "numero_comprobante", length = 20, unique = true)
     private String numeroComprobante;
-    @Column(name="id")
+    @Column(name="cliente_id")
     private int cliente;
-    @Column(name = "id", nullable = false)
+    @Column(name = "usuario_id", nullable = false)
     private int usuario;
     @Column(name = "fecha_venta", updatable = false)
     private LocalDateTime fechaVenta;
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false)
     private double subtotal;
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false)
     private double igv;
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(nullable = false)
     private double total;
     @Enumerated(EnumType.STRING)
     @Column(name = "metodo_pago", nullable = false)
